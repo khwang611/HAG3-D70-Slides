@@ -86,7 +86,7 @@
 </header>
 <nav>
   <div class="links">
-    <a href="#warmup">Warm Up</a><a href="#formula">Formula</a><a href="#interactive">Interactive Triangle</a><a href="#steps">Steps</a><a href="#practice">Practice</a><a href="#quiz">Quick Check</a>
+    <a href="#warmup">Warm Up</a><a href="#formula">Formula</a><a href="#interactive">Swamp Example</a><a href="#steps">Steps</a><a href="#practice">Practice</a><a href="#quiz">Quick Check</a>
   </div>
 </nav>
 <main>
@@ -121,33 +121,32 @@
   </section>
 
   <section id="interactive">
-    <div class="mini-label">Interactive Triangle</div>
-    <h2>Change the sides and included angle.</h2>
-    <div class="card triangle-zone">
-      <div>
-        <svg viewBox="0 0 520 360" aria-label="Interactive triangle diagram">
-          <polygon id="triPoly" points="90,290 390,290 250,80" fill="#e0f2fe" stroke="#17213b" stroke-width="5" stroke-linejoin="round" />
-          <circle cx="90" cy="290" r="7" fill="#f97316"/><circle cx="390" cy="290" r="7" fill="#f97316"/><circle id="topDot" cx="250" cy="80" r="7" fill="#f97316"/>
-          <text x="78" y="324" font-weight="900">A</text><text x="392" y="324" font-weight="900">B</text><text id="cText" x="250" y="62" font-weight="900">C</text>
-          <text id="sideAText" x="330" y="177" font-weight="900" fill="#17213b">a</text>
-          <text id="sideBText" x="145" y="177" font-weight="900" fill="#17213b">b</text>
-          <text id="sideCText" x="235" y="318" font-weight="900" fill="#17213b">c</text>
-          <path id="angleArc" d="M 226 116 A 42 42 0 0 1 274 116" fill="none" stroke="#f97316" stroke-width="5" />
-          <text id="angleLabel" x="236" y="135" font-weight="900" fill="#f97316">C</text>
-        </svg>
+    <div class="mini-label">Classwork Example</div>
+    <h2>The swamp question: building the Law of Cosines</h2>
+    <div class="card">
+      <p><strong>Scenario:</strong> Surveyors are measuring a triangular plot of land with a swamp in the middle. Two sides are known: <strong>120 ft</strong> and <strong>200 ft</strong>. The included angle is <strong>41°</strong>. The swamp makes the third side hard to measure, so we calculate it.</p>
+      <div class="answer-box">
+        <div class="mini-label">Given</div>
+        <p><span class="pill">Side 1 = 120 ft</span><span class="pill">Side 2 = 200 ft</span><span class="pill">Included angle = 41°</span></p>
       </div>
-      <div class="controls">
-        <label>Side a: <span id="aVal">17.1</span></label>
-        <input id="aSlider" type="range" min="5" max="25" step="0.1" value="17.1" oninput="updateTriangle()">
-        <label>Side b: <span id="bVal">16.8</span></label>
-        <input id="bSlider" type="range" min="5" max="25" step="0.1" value="16.8" oninput="updateTriangle()">
-        <label>Included angle C: <span id="angleVal">49.6</span>°</label>
-        <input id="angleSlider" type="range" min="20" max="140" step="0.1" value="49.6" oninput="updateTriangle()">
-        <div class="answer-box">
-          <div class="mini-label">Law of Cosines Result</div>
-          <p class="formula" id="equationText">c² = 17.1² + 16.8² − 2(17.1)(16.8)cos(49.6°)</p>
-          <h3 id="resultText">c ≈ 12.98</h3>
-        </div>
+      <svg viewBox="0 0 720 360" aria-label="Swamp triangle diagram" style="max-width:850px;margin:18px auto;display:block;">
+        <polygon points="130,290 130,80 585,50" fill="#e0f2fe" stroke="#17213b" stroke-width="5" stroke-linejoin="round" />
+        <line x1="130" y1="290" x2="585" y2="50" stroke="#17213b" stroke-width="5" />
+        <ellipse cx="260" cy="130" rx="95" ry="42" fill="#c7f9cc" stroke="#20b8aa" stroke-width="3" stroke-dasharray="8 8" transform="rotate(-18 260 130)"/>
+        <text x="224" y="138" font-size="30" font-weight="900" fill="#08756c">swamp</text>
+        <text x="72" y="190" font-size="28" font-weight="900">120 ft</text>
+        <text x="392" y="210" font-size="28" font-weight="900">200 ft</text>
+        <text x="310" y="41" font-size="28" font-weight="900" fill="#f97316">x</text>
+        <path d="M 130 290 L 185 260" stroke="#f97316" stroke-width="5"/>
+        <path d="M 130 290 L 130 230" stroke="#f97316" stroke-width="5"/>
+        <text x="154" y="246" font-size="26" font-weight="900" fill="#f97316">41°</text>
+      </svg>
+      <div class="steps">
+        <div class="step"><div><h3>Step 1: Identify the case.</h3><p>This is <strong>SAS</strong> because we know two sides and the included angle. That means Law of Cosines works.</p></div></div>
+        <div class="step"><div><h3>Step 2: Write the formula.</h3><p class="formula">x² = 120² + 200² − 2(120)(200)cos(41°)</p></div></div>
+        <div class="step"><div><h3>Step 3: Simplify.</h3><p class="formula">x² = 14,400 + 40,000 − 48,000cos(41°)</p></div></div>
+        <div class="step"><div><h3>Step 4: Calculate.</h3><p class="formula">x² ≈ 18,175.59</p><p class="formula">x ≈ √18,175.59 ≈ 134.82</p></div></div>
+        <div class="step"><div><h3>Final Answer</h3><p>The missing side is approximately <strong>134.8 feet</strong>.</p></div></div>
       </div>
     </div>
   </section>
@@ -164,12 +163,41 @@
   </section>
 
   <section id="practice">
-    <div class="mini-label">Practice Scenario</div>
-    <h2>Soccer field problem</h2>
+    <div class="mini-label">Worked Problems</div>
+    <h2>Show work for each problem</h2>
+
+    <div class="card" style="margin-bottom:18px;">
+      <h3>Problem 1: Swamp / plot of land</h3>
+      <p>Two sides of a triangular plot are <strong>120 ft</strong> and <strong>200 ft</strong>. The included angle is <strong>41°</strong>. Find the missing side.</p>
+      <div class="steps">
+        <div class="step"><div><h3>Write the formula.</h3><p class="formula">x² = 120² + 200² − 2(120)(200)cos(41°)</p></div></div>
+        <div class="step"><div><h3>Simplify the squares and product.</h3><p class="formula">x² = 14,400 + 40,000 − 48,000cos(41°)</p></div></div>
+        <div class="step"><div><h3>Evaluate.</h3><p class="formula">x² ≈ 18,175.59</p></div></div>
+        <div class="step"><div><h3>Square root.</h3><p class="formula">x ≈ 134.82</p><p><strong>Answer:</strong> The missing side is about <strong>134.8 ft</strong>.</p></div></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:18px;">
+      <h3>Problem 2: Soccer field</h3>
+      <p>Sierra is <strong>16.8 m</strong> from the center of the goal and <strong>17.1 m</strong> from Alex. The included angle is <strong>49.6°</strong>. Find the distance from Alex to the center of the goal.</p>
+      <div class="steps">
+        <div class="step"><div><h3>Identify SAS.</h3><p>The two known distances meet at Sierra, and the included angle is 49.6°.</p></div></div>
+        <div class="step"><div><h3>Write the formula.</h3><p class="formula">x² = 16.8² + 17.1² − 2(16.8)(17.1)cos(49.6°)</p></div></div>
+        <div class="step"><div><h3>Simplify.</h3><p class="formula">x² = 282.24 + 292.41 − 574.56cos(49.6°)</p></div></div>
+        <div class="step"><div><h3>Evaluate.</h3><p class="formula">x² ≈ 202.03</p></div></div>
+        <div class="step"><div><h3>Square root.</h3><p class="formula">x ≈ 14.21</p><p><strong>Answer:</strong> Alex is about <strong>14.2 meters</strong> from the center of the goal.</p></div></div>
+      </div>
+    </div>
+
     <div class="card">
-      <p>During a Wave soccer game, Sierra is <strong>16.8 m</strong> from the center of the goal and <strong>17.1 m</strong> from her teammate Alex. The angle she turns from the goal to Alex is <strong>49.6°</strong>. How far is Alex from the center of the goal?</p>
-      <details><summary>Show setup</summary><p class="formula">x² = 16.8² + 17.1² − 2(16.8)(17.1)cos(49.6°)</p></details>
-      <details><summary>Show answer</summary><p><strong>x ≈ 12.98 m</strong>, so Alex is about <strong>13.0 meters</strong> from the center of the goal.</p></details>
+      <h3>Problem 3: Expressing Law of Cosines in different ways</h3>
+      <p>For a triangle with sides <strong>a</strong>, <strong>b</strong>, and <strong>c</strong>, each formula finds the side across from the matching angle.</p>
+      <div class="answer-box">
+        <p class="formula">a² = b² + c² − 2bc cos(A)</p>
+        <p class="formula">b² = a² + c² − 2ac cos(B)</p>
+        <p class="formula">c² = a² + b² − 2ab cos(C)</p>
+      </div>
+      <details><summary>How to remember it</summary><p>The side by itself on the left matches the angle inside cosine. For example, <span class="formula">c²</span> uses <span class="formula">cos(C)</span>.</p></details>
     </div>
   </section>
 
@@ -198,52 +226,11 @@
     else fb.innerHTML = 'Not quite. Hint: Law of Sines needs a known angle-side opposite pair.';
   }
 
-  function updateTriangle(){
-    const a = parseFloat(document.getElementById('aSlider').value);
-    const b = parseFloat(document.getElementById('bSlider').value);
-    const C = parseFloat(document.getElementById('angleSlider').value);
-    document.getElementById('aVal').textContent = a.toFixed(1);
-    document.getElementById('bVal').textContent = b.toFixed(1);
-    document.getElementById('angleVal').textContent = C.toFixed(1);
-    const rad = C * Math.PI / 180;
-    const c = Math.sqrt(a*a + b*b - 2*a*b*Math.cos(rad));
-    document.getElementById('equationText').textContent = `c² = ${a.toFixed(1)}² + ${b.toFixed(1)}² − 2(${a.toFixed(1)})(${b.toFixed(1)})cos(${C.toFixed(1)}°)`;
-    document.getElementById('resultText').textContent = `c ≈ ${c.toFixed(2)}`;
-
-    const scale = 9;
-    const topX = 240;
-    const topY = 70;
-    const leftX = topX - b*scale*Math.sin(rad/2);
-    const leftY = topY + b*scale*Math.cos(rad/2);
-    const rightX = topX + a*scale*Math.sin(rad/2);
-    const rightY = topY + a*scale*Math.cos(rad/2);
-    document.getElementById('triPoly').setAttribute('points', `${leftX},${leftY} ${rightX},${rightY} ${topX},${topY}`);
-    document.getElementById('topDot').setAttribute('cx', topX);
-    document.getElementById('topDot').setAttribute('cy', topY);
-    document.getElementById('cText').setAttribute('x', topX-6);
-    document.getElementById('cText').setAttribute('y', topY-15);
-    document.querySelector('svg circle:nth-of-type(1)').setAttribute('cx', leftX);
-    document.querySelector('svg circle:nth-of-type(1)').setAttribute('cy', leftY);
-    document.querySelector('svg circle:nth-of-type(2)').setAttribute('cx', rightX);
-    document.querySelector('svg circle:nth-of-type(2)').setAttribute('cy', rightY);
-    document.querySelector('svg text:nth-of-type(1)').setAttribute('x', leftX-12);
-    document.querySelector('svg text:nth-of-type(1)').setAttribute('y', leftY+34);
-    document.querySelector('svg text:nth-of-type(2)').setAttribute('x', rightX+2);
-    document.querySelector('svg text:nth-of-type(2)').setAttribute('y', rightY+34);
-    document.getElementById('sideAText').setAttribute('x', (rightX+topX)/2 + 10);
-    document.getElementById('sideAText').setAttribute('y', (rightY+topY)/2);
-    document.getElementById('sideBText').setAttribute('x', (leftX+topX)/2 - 22);
-    document.getElementById('sideBText').setAttribute('y', (leftY+topY)/2);
-    document.getElementById('sideCText').setAttribute('x', (leftX+rightX)/2 - 6);
-    document.getElementById('sideCText').setAttribute('y', (leftY+rightY)/2 + 30);
-  }
-
   function checkQuiz(btn, isCorrect){
     document.querySelectorAll('.quiz-option').forEach(b => b.classList.remove('correct','wrong'));
     btn.classList.add(isCorrect ? 'correct' : 'wrong');
     document.getElementById('quizFeedback').innerHTML = isCorrect ? 'Correct! Law of Cosines works well for <strong>SAS</strong> and can also be rearranged for <strong>SSS</strong> missing angle problems.' : 'Try again. Look for SAS or SSS.';
   }
-  updateTriangle();
 </script>
 </body>
 </html>
